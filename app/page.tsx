@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section className="relative min-h-screen flex items-end pb-20 overflow-hidden">
+      <section className="relative min-h-screen flex items-center md:items-end pt-24 md:pt-0 pb-12 md:pb-20 overflow-hidden">
         <HeroVideo />
         {/* Dark overlay for text readability */}
         <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
