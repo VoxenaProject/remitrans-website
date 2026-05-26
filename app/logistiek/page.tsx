@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import type React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import FadeIn from "@/components/FadeIn"
@@ -8,13 +9,46 @@ export const metadata: Metadata = {
   description: "60.000 m² beveiligde opslagruimte in Ninove. Spooraansluiting, orderpicking, WMS, ISO 22000.",
 }
 
+const serviceIcons: Record<string, React.ReactNode> = {
+  warehouse: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <path d="M3 21V8l9-5 9 5v13"/><path d="M9 21V12h6v9"/><path d="M3 10.5h18"/>
+    </svg>
+  ),
+  box: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/>
+    </svg>
+  ),
+  train: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <rect x="4" y="3" width="16" height="13" rx="2"/><path d="M4 11h16M12 3v8M8 19l-2 3M16 19l2 3M8 19h8"/>
+    </svg>
+  ),
+  truck: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v3"/><rect x="9" y="11" width="14" height="10" rx="1"/><circle cx="12" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+    </svg>
+  ),
+  solar: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/>
+    </svg>
+  ),
+  shield: (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6">
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
+    </svg>
+  ),
+}
+
 const services = [
-  { icon: "🏭", title: "Beveiligde opslag", text: "50.000 m² buiten + 45.000 m² binnen, nuttige hoogte 10 m. Toegangscontrole 24/7." },
-  { icon: "📦", title: "Orderpicking", text: "Nauwkeurige en snelle ordervoorbereiding. WMS-systeem voor volledige traceerbaarheid." },
-  { icon: "🚂", title: "Spooraansluiting", text: "3 sites met spoorverbinding. 2 sporen van 550 m voor de langste goederentreinen." },
-  { icon: "🔄", title: "Laden & lossen", text: "Gespecialiseerde teams, heftrucks, laadkaaien aangepast aan alle goederentypes." },
-  { icon: "☀️", title: "Zonne-energie", text: "Alle magazijnen uitgerust met zonnepanelen sinds eind 2013. Eigen duurzame energieproductie." },
-  { icon: "✅", title: "ISO 22000 / HACCP", text: "Voedselveiligheidscertificering. Strikte procedures voor de opslag van levensmiddelen." },
+  { icon: "warehouse", title: "Beveiligde opslag", text: "50.000 m² buiten + 45.000 m² binnen, nuttige hoogte 10 m. Toegangscontrole 24/7." },
+  { icon: "box", title: "Orderpicking", text: "Nauwkeurige en snelle ordervoorbereiding. WMS-systeem voor volledige traceerbaarheid." },
+  { icon: "train", title: "Spooraansluiting", text: "3 sites met spoorverbinding. 2 sporen van 550 m voor de langste goederentreinen." },
+  { icon: "truck", title: "Laden & lossen", text: "Gespecialiseerde teams, heftrucks, laadkaaien aangepast aan alle goederentypes." },
+  { icon: "solar", title: "Zonne-energie", text: "Alle magazijnen uitgerust met zonnepanelen sinds eind 2013. Eigen duurzame energieproductie." },
+  { icon: "shield", title: "ISO 22000 / HACCP", text: "Voedselveiligheidscertificering. Strikte procedures voor de opslag van levensmiddelen." },
 ]
 
 const specs = [
@@ -63,13 +97,15 @@ export default function LogistiekPage() {
       <section className="py-28 max-w-7xl mx-auto px-6">
         <FadeIn>
           <span className="text-xs font-semibold tracking-widest uppercase text-[#D4291E] block mb-3">Diensten</span>
-          <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-16 text-[#0A0A0A]">ONZE LOGISTIEKE<br />DIENSTEN.</h2>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-16 text-[#0A0A0A]">ONZE LOGISTIEKE<br />DIENSTEN.</h2>
         </FadeIn>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((s, i) => (
             <FadeIn key={s.title} delay={i * 0.08}>
               <div className="bg-white border border-[#E5E5E3] rounded-2xl p-8 hover:border-[#D4291E]/30 hover:shadow-md transition-all duration-300 hover:-translate-y-0.5 h-full">
-                <span className="text-2xl mb-4 block">{s.icon}</span>
+                <div className="w-11 h-11 rounded-xl bg-[#D4291E]/8 text-[#D4291E] flex items-center justify-center mb-5">
+                  {serviceIcons[s.icon]}
+                </div>
                 <h3 className="text-lg font-bold text-[#0A0A0A] mb-3">{s.title}</h3>
                 <p className="text-sm text-[#6B7280] leading-relaxed">{s.text}</p>
               </div>

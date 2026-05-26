@@ -59,6 +59,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* PARTNERS */}
+      <section className="py-14 border-b border-[#E5E5E3] bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-10">
+          <FadeIn>
+            <p className="text-xs font-semibold tracking-widest uppercase text-[#9CA3AF] text-center">
+              Zij vertrouwen op Remitrans
+            </p>
+          </FadeIn>
+        </div>
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-r from-white to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-20 z-10 bg-gradient-to-l from-white to-transparent pointer-events-none" />
+          <div className="flex marquee-left" style={{ width: "max-content" }}>
+            {[
+              { name: "Delhaize", file: "delhaize.svg", w: 140 },
+              { name: "Nestlé", file: "nestle.svg", w: 110 },
+              { name: "Kellogg's", file: "kelloggs.svg", w: 120 },
+              { name: "Schweppes", file: "schweppes.svg", w: 140 },
+              { name: "SPA", file: "spa.svg", w: 80 },
+              { name: "CHEP", file: "chep.svg", w: 100 },
+              { name: "LPR", file: "lpr.svg", w: 100 },
+              { name: "Delhaize", file: "delhaize.svg", w: 140 },
+              { name: "Nestlé", file: "nestle.svg", w: 110 },
+              { name: "Kellogg's", file: "kelloggs.svg", w: 120 },
+              { name: "Schweppes", file: "schweppes.svg", w: 140 },
+              { name: "SPA", file: "spa.svg", w: 80 },
+              { name: "CHEP", file: "chep.svg", w: 100 },
+              { name: "LPR", file: "lpr.svg", w: 100 },
+            ].map((p, i) => (
+              <div
+                key={i}
+                className="flex items-center justify-center mx-10 opacity-60 hover:opacity-100 transition-all duration-300 shrink-0"
+              >
+                <Image
+                  src={`/images/partners/${p.file}`}
+                  alt={p.name}
+                  width={p.w}
+                  height={44}
+                  className="h-11 w-auto object-contain"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* STATS */}
       <section className="border-y border-[#E5E5E3] bg-[#F7F7F5]">
         <div className="max-w-7xl mx-auto px-6 py-16">
@@ -87,7 +134,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold tracking-widest uppercase text-[#D4291E] block mb-3">
                 Onze activiteiten
               </span>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0A]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0A]">
                 DRIE DIVISIES,
                 <br />
                 ÉÉN EXPERTISE.
@@ -209,7 +256,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold tracking-widest uppercase text-[#D4291E] block mb-3">
                 Nieuws
               </span>
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight text-[#0A0A0A]">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-[#0A0A0A]">
                 REMITRANS
                 <br />
                 IN BEWEGING.
@@ -258,7 +305,7 @@ export default function HomePage() {
               <span className="text-xs font-semibold tracking-widest uppercase text-[#D4291E] block mb-4">
                 Vacatures
               </span>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight mb-4 text-white">
+              <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-4 text-white">
                 WORD DEEL VAN
                 <br />
                 ONS TEAM.

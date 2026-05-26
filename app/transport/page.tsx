@@ -46,7 +46,7 @@ export default function TransportPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeIn direction="left">
             <span className="text-xs font-mono font-bold text-[#D4291E] tracking-widest mb-4 block">01</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight text-[#0A0A0A]">BULKVERVOER</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight text-[#0A0A0A]">BULKVERVOER</h2>
             <p className="text-[#6B7280] leading-relaxed mb-8">
               Transport van losse producten — poeders, kunststoffen, mineralen — met 65 trekkers en 100 gespecialiseerde opleggers.
               Ons SQAS-gecertificeerd reinigingsstation garandeert de hoogste kwaliteits- en voedselveiligheidsnormen.
@@ -87,7 +87,7 @@ export default function TransportPage() {
           </FadeIn>
           <FadeIn direction="right" className="order-1 lg:order-2">
             <span className="text-xs font-mono font-bold text-[#D4291E] tracking-widest mb-4 block">02</span>
-            <h2 className="text-4xl md:text-5xl font-black tracking-tight mb-6 leading-tight text-[#0A0A0A]">HUIFVERVOER</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight text-[#0A0A0A]">HUIFVERVOER</h2>
             <p className="text-[#6B7280] leading-relaxed mb-8">
               85 trekkers en 150 huifopleggers gespecialiseerd in retail- en drankenvervoer.
               Actief in de Benelux, Frankrijk en internationaal. Maatoplossingen voor alle ladingstypes.
