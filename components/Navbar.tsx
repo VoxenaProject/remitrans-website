@@ -49,9 +49,7 @@ export default function Navbar() {
               src="/images/logo.png"
               alt="Remitrans NV"
               fill
-              className={`object-contain object-left transition-all duration-300 ${
-                !scrolled && isHero ? "brightness-0 invert" : ""
-              }`}
+              className="object-contain object-left"
               priority
             />
           </div>
