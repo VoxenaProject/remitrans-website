@@ -143,21 +143,59 @@ export default function HomePage() {
       </section>
 
       {/* CERTIFICATIONS */}
-      <section className="py-16 border-y border-[#E5E5E3] bg-[#F7F7F5]">
-        <div className="max-w-7xl mx-auto px-6">
-          <FadeIn>
-            <p className="text-xs font-semibold tracking-widest uppercase text-[#9CA3AF] text-center mb-10">
-              Certificeringen & labels
+      <section className="py-20 bg-[#0A0A0A] overflow-hidden">
+        <FadeIn>
+          <div className="max-w-7xl mx-auto px-6 mb-12 flex items-end justify-between">
+            <div>
+              <span className="text-xs font-semibold tracking-widest uppercase text-[#D4291E] block mb-2">
+                Kwaliteitsgarantie
+              </span>
+              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white">
+                GECERTIFICEERD<br />OP ELK NIVEAU.
+              </h2>
+            </div>
+            <p className="hidden md:block text-sm text-white/30 max-w-xs text-right leading-relaxed">
+              8 internationale certificeringen — van voedselveiligheid tot duurzame logistiek.
             </p>
-          </FadeIn>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-5">
-            {certifications.map((c, i) => (
-              <FadeIn key={c.name} delay={i * 0.06}>
-                <div className="flex flex-col items-center gap-1 px-5 py-3 rounded-xl border border-[#E5E5E3] bg-white hover:border-[#D4291E]/30 hover:shadow-sm transition-all">
-                  <span className="text-sm font-bold text-[#0A0A0A]">{c.name}</span>
-                  <span className="text-[10px] text-[#9CA3AF] tracking-wide">{c.description}</span>
+          </div>
+        </FadeIn>
+
+        {/* Marquee row 1 — links */}
+        <div className="relative mb-4">
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0A0A0A] to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0A0A0A] to-transparent pointer-events-none" />
+          <div className="flex marquee-left" style={{ width: "max-content" }}>
+            {[...certifications, ...certifications].map((c, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 mx-3 px-6 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[#D4291E]/50 hover:bg-white/8 transition-all shrink-0"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#D4291E] shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-white leading-none">{c.name}</p>
+                  <p className="text-[10px] text-white/40 mt-0.5 tracking-wide">{c.description}</p>
                 </div>
-              </FadeIn>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Marquee row 2 — rechts */}
+        <div className="relative">
+          <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#0A0A0A] to-transparent pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#0A0A0A] to-transparent pointer-events-none" />
+          <div className="flex marquee-right" style={{ width: "max-content" }}>
+            {[...certifications, ...certifications].reverse().map((c, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 mx-3 px-6 py-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-sm hover:border-[#D4291E]/50 hover:bg-white/8 transition-all shrink-0"
+              >
+                <div className="w-2 h-2 rounded-full bg-[#D4291E]/60 shrink-0" />
+                <div>
+                  <p className="text-sm font-bold text-white leading-none">{c.name}</p>
+                  <p className="text-[10px] text-white/40 mt-0.5 tracking-wide">{c.description}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
